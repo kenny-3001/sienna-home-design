@@ -1,0 +1,50 @@
+---
+const stats = [
+	{ value: '12+', label: 'Años de experiencia' },
+	{ value: '180+', label: 'Proyectos entregados' },
+	{ value: '98%', label: 'Clientes satisfechos' },
+];
+---
+
+<section id="nosotros" class="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
+	<div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+		<div data-animate class="relative">
+			<img
+				src="https://picsum.photos/id/1039/900/1100"
+				alt="Equipo de Studio Interiores trabajando en un proyecto"
+				class="aspect-[4/5] w-full rounded-2xl object-cover"
+			/>
+			<div class="absolute -bottom-8 -right-8 hidden max-w-xs rounded-2xl bg-stone-900 p-6 shadow-xl sm:block">
+				<p class="font-serif-display text-2xl font-semibold text-white">12+ años</p>
+				<p class="mt-1 text-sm text-stone-300">creando espacios memorables</p>
+			</div>
+		</div>
+
+		<div data-animate data-animate-delay="1">
+			<p class="text-sm font-medium uppercase tracking-[0.3em] text-amber-700">Sobre nosotros</p>
+			<h2 class="mt-4 font-serif-display text-3xl font-semibold text-stone-900 sm:text-4xl">
+				Diseñamos con intención, no solo con estética
+			</h2>
+			<p class="mt-6 text-stone-600 leading-relaxed">
+				En Studio Interiores creemos que un buen diseño equilibra belleza y funcionalidad. Nuestro equipo
+				multidisciplinario trabaja de la mano contigo para entender cómo vives o cómo opera tu negocio,
+				y traducir eso en espacios que reflejan tu identidad.
+			</p>
+			<p class="mt-4 text-stone-600 leading-relaxed">
+				Desde el primer boceto hasta la última pieza de mobiliario, cuidamos cada detalle para entregar
+				resultados que superan expectativas.
+			</p>
+
+			<div class="mt-10 grid grid-cols-3 gap-6 border-t border-stone-200 pt-8">
+				{
+					stats.map((stat) => (
+						<div>
+							<p class="font-serif-display text-2xl font-semibold text-stone-900 sm:text-3xl">{stat.value}</p>
+							<p class="mt-1 text-xs text-stone-500 sm:text-sm">{stat.label}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>

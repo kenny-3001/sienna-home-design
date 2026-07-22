@@ -1,0 +1,45 @@
+---
+const testimonials = [
+	{
+		quote: 'El equipo entendió exactamente lo que buscábamos para nuestra casa. El resultado superó nuestras expectativas.',
+		name: 'María Fernanda R.',
+		role: 'Proyecto residencial',
+	},
+	{
+		quote: 'Muy profesionales y atentos a cada detalle. Nuestras oficinas ahora reflejan la identidad de la marca.',
+		name: 'Carlos Medina',
+		role: 'Proyecto comercial',
+	},
+	{
+		quote: 'Cumplieron con los tiempos y el presupuesto acordado. Recomendados totalmente.',
+		name: 'Lucía Torres',
+		role: 'Remodelación',
+	},
+];
+---
+
+<section class="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
+	<div data-animate class="mx-auto max-w-2xl text-center">
+		<p class="text-sm font-medium uppercase tracking-[0.3em] text-amber-700">Testimonios</p>
+		<h2 class="mt-4 font-serif-display text-3xl font-semibold text-stone-900 sm:text-4xl">
+			Lo que dicen nuestros clientes
+		</h2>
+	</div>
+
+	<div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+		{
+			testimonials.map((t, i) => (
+				<div data-animate data-animate-delay={String(i)} class="rounded-2xl bg-stone-100 p-8">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-amber-700/40" fill="currentColor" viewBox="0 0 24 24">
+						<path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+					</svg>
+					<p class="mt-4 text-stone-700 leading-relaxed">{t.quote}</p>
+					<div class="mt-6">
+						<p class="font-semibold text-stone-900">{t.name}</p>
+						<p class="text-sm text-stone-500">{t.role}</p>
+					</div>
+				</div>
+			))
+		}
+	</div>
+</section>

@@ -1,0 +1,29 @@
+---
+const steps = [
+	{ number: '01', title: 'Consulta', description: 'Conversamos sobre tus necesidades, gustos y presupuesto para entender el proyecto.' },
+	{ number: '02', title: 'Propuesta', description: 'Presentamos concepto, moodboard y planos preliminares del espacio.' },
+	{ number: '03', title: 'Ejecución', description: 'Coordinamos proveedores y obra, supervisando cada etapa del proceso.' },
+	{ number: '04', title: 'Entrega', description: 'Recibes tu espacio terminado, listo para vivir o para operar tu negocio.' },
+];
+---
+
+<section id="proceso" class="bg-stone-900 py-24 lg:py-32">
+	<div class="mx-auto max-w-7xl px-6 lg:px-8">
+		<div data-animate class="mx-auto max-w-2xl text-center">
+			<p class="text-sm font-medium uppercase tracking-[0.3em] text-amber-400">Cómo trabajamos</p>
+			<h2 class="mt-4 font-serif-display text-3xl font-semibold text-white sm:text-4xl">Nuestro proceso</h2>
+		</div>
+
+		<div class="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+			{
+				steps.map((step, i) => (
+					<div data-animate data-animate-delay={String(i)} class="relative">
+						<p class="font-serif-display text-5xl font-semibold text-white/10">{step.number}</p>
+						<h3 class="mt-2 font-serif-display text-lg font-semibold text-white">{step.title}</h3>
+						<p class="mt-2 text-sm leading-relaxed text-stone-400">{step.description}</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

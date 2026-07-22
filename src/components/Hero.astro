@@ -1,0 +1,78 @@
+---
+const slides = [
+	{ src: '/images/hero/img1.jpg', alt: 'Dormitorio moderno diseñado por Studio Interiores' },
+	{ src: '/images/hero/img2.jpg', alt: 'Sala de estar moderna diseñada por Studio Interiores' },
+];
+
+const SLIDE_SECONDS = 9;
+const FADE_SECONDS = 2;
+const totalSeconds = slides.length * SLIDE_SECONDS;
+const share = 100 / slides.length;
+const fadeShare = (FADE_SECONDS / totalSeconds) * 100;
+
+const heroKeyframes = `
+@keyframes hero-kenburns {
+	0% { opacity: 0; transform: scale(1); }
+	${fadeShare.toFixed(3)}% { opacity: 0.65; }
+	${(share - fadeShare).toFixed(3)}% { opacity: 0.65; }
+	${share.toFixed(3)}% { opacity: 0; transform: scale(1.08); }
+	100% { opacity: 0; }
+}
+`;
+---
+
+<section class="relative flex min-h-screen items-center justify-center overflow-hidden bg-stone-900">
+	{
+		slides.map((slide, i) => (
+			<img
+				src={slide.src}
+				alt={slide.alt}
+				class="absolute inset-0 h-full w-full object-cover"
+				style={`animation: hero-kenburns ${totalSeconds}s ease-in-out infinite; animation-delay: -${i * SLIDE_SECONDS}s;`}
+			/>
+		))
+	}
+	<style set:html={heroKeyframes} />
+	<div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-stone-900/20"></div>
+
+	<div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
+		<p data-animate class="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-amber-400">
+			Diseño de interiores
+		</p>
+		<h1
+			data-animate
+			data-animate-delay="1"
+			class="font-serif-display text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl"
+		>
+			Transformamos espacios <br class="hidden sm:block" /> en experiencias
+		</h1>
+		<p data-animate data-animate-delay="2" class="mx-auto mt-6 max-w-xl text-lg text-stone-200">
+			Creamos ambientes residenciales y comerciales que combinan funcionalidad, estética
+			y la identidad de quienes los habitan.
+		</p>
+		<div data-animate data-animate-delay="3" class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+			<a
+				href="#contacto"
+				class="inline-flex items-center justify-center rounded-full bg-amber-700 px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-amber-600"
+			>
+				Cotiza tu proyecto
+			</a>
+			<a
+				href="#proyectos"
+				class="inline-flex items-center justify-center rounded-full border border-white/40 px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white/10"
+			>
+				Ver proyectos
+			</a>
+		</div>
+	</div>
+
+	<a
+		href="#servicios"
+		aria-label="Ir a servicios"
+		class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce text-white/80"
+	>
+		<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+		</svg>
+	</a>
+</section>

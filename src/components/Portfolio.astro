@@ -1,0 +1,55 @@
+---
+const projects = [
+	{ title: 'Departamento Miraflores', category: 'Residencial', image: 'https://picsum.photos/id/1048/800/1000' },
+	{ title: 'Oficinas Norte', category: 'Comercial', image: 'https://picsum.photos/id/1060/800/1000' },
+	{ title: 'Casa Costa Verde', category: 'Residencial', image: 'https://picsum.photos/id/1074/800/1000' },
+	{ title: 'Café Central', category: 'Hospitalidad', image: 'https://picsum.photos/id/1080/800/1000' },
+	{ title: 'Loft San Isidro', category: 'Residencial', image: 'https://picsum.photos/id/1082/800/1000' },
+	{ title: 'Showroom Retail', category: 'Comercial', image: 'https://picsum.photos/id/1084/800/1000' },
+];
+---
+
+<section id="proyectos" class="bg-stone-100 py-24 lg:py-32">
+	<div class="mx-auto max-w-7xl px-6 lg:px-8">
+		<div data-animate class="mx-auto max-w-2xl text-center">
+			<p class="text-sm font-medium uppercase tracking-[0.3em] text-amber-700">Proyectos</p>
+			<h2 class="mt-4 font-serif-display text-3xl font-semibold text-stone-900 sm:text-4xl">
+				Espacios que hemos transformado
+			</h2>
+		</div>
+
+		<div class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{
+				projects.map((project, i) => (
+					<a
+						href="#"
+						data-animate
+						data-animate-delay={String(i % 3)}
+						class="group relative block aspect-[4/5] overflow-hidden rounded-2xl"
+					>
+						<img
+							src={project.image}
+							alt={project.title}
+							loading="lazy"
+							class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+						/>
+						<div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/10 to-transparent opacity-70 transition-opacity group-hover:opacity-90" />
+						<div class="absolute inset-x-0 bottom-0 translate-y-2 p-6 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+							<p class="text-xs font-medium uppercase tracking-wider text-amber-300">{project.category}</p>
+							<h3 class="mt-1 font-serif-display text-xl font-semibold text-white">{project.title}</h3>
+						</div>
+					</a>
+				))
+			}
+		</div>
+
+		<div data-animate class="mt-14 text-center">
+			<a
+				href="#"
+				class="inline-flex items-center justify-center rounded-full border border-stone-300 px-8 py-3.5 text-sm font-medium text-stone-800 transition-colors hover:bg-stone-900 hover:text-white hover:border-stone-900"
+			>
+				Ver todos los proyectos
+			</a>
+		</div>
+	</div>
+</section>
