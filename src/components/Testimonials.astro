@@ -48,7 +48,7 @@ const testimonials = [
 				>
 					{
 						testimonials.map((t) => (
-							<div class="w-80 shrink-0 snap-start rounded-2xl bg-stone-100 p-8 sm:w-96">
+							<div class="w-80 shrink-0 snap-start rounded-2xl bg-stone-100 p-8 sm:w-96 sm:px-14">
 								<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-bronze-700/40" fill="currentColor" viewBox="0 0 24 24">
 									<path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
 								</svg>
@@ -66,7 +66,7 @@ const testimonials = [
 					id="testimonials-prev"
 					type="button"
 					aria-label="Anterior"
-					class="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-stone-900 backdrop-blur transition-colors hover:bg-white"
+					class="absolute left-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 sm:flex items-center justify-center rounded-full bg-white/70 text-stone-900 backdrop-blur transition-colors hover:bg-white"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
@@ -76,7 +76,7 @@ const testimonials = [
 					id="testimonials-next"
 					type="button"
 					aria-label="Siguiente"
-					class="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-stone-900 backdrop-blur transition-colors hover:bg-white"
+					class="absolute right-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 sm:flex items-center justify-center rounded-full bg-white/70 text-stone-900 backdrop-blur transition-colors hover:bg-white"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
