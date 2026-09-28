@@ -1,50 +1,66 @@
 ---
-const stats = [
-	{ value: '12+', label: 'Años de experiencia' },
-	{ value: '180+', label: 'Proyectos entregados' },
-	{ value: '98%', label: 'Clientes satisfechos' },
+const pillars = [
+	{
+		number: '01',
+		title: 'Escucha activa',
+		description: 'Cada proyecto empieza entendiendo quién vive en él y cómo lo siente.',
+	},
+	{
+		number: '02',
+		title: 'Precisión',
+		description: 'Los detalles hacen la diferencia. Cuidamos cada línea, textura y luz.',
+	},
+	{
+		number: '03',
+		title: 'Funcionalidad',
+		description: 'Un espacio bello que no funciona no está terminado.',
+	},
+	{
+		number: '04',
+		title: 'Compromiso',
+		description: 'Tu inversión y tu sueño son nuestra responsabilidad.',
+	},
 ];
 ---
 
 <section id="nosotros" class="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
 	<div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-		<div data-animate class="relative">
+		<div data-animate>
 			<img
-				src="https://picsum.photos/id/1039/900/1100"
-				alt="Equipo de Studio Interiores trabajando en un proyecto"
-				class="aspect-[4/5] w-full rounded-2xl object-cover"
+				src="/images/about-render.png"
+				alt="Render 3D de una sala diseñada por Sienna Home, con muestras de melamina y tela"
+				class="w-full rounded-2xl object-cover"
 			/>
-			<div class="absolute -bottom-8 -right-8 hidden max-w-xs rounded-2xl bg-stone-900 p-6 shadow-xl sm:block">
-				<p class="font-serif-display text-2xl font-semibold text-white">12+ años</p>
-				<p class="mt-1 text-sm text-stone-300">creando espacios memorables</p>
-			</div>
 		</div>
 
 		<div data-animate data-animate-delay="1">
-			<p class="text-sm font-medium uppercase tracking-[0.3em] text-amber-700">Sobre nosotros</p>
+			<p class="text-sm font-medium uppercase tracking-[0.3em] text-bronze-700">Sobre nosotros</p>
 			<h2 class="mt-4 font-serif-display text-3xl font-semibold text-stone-900 sm:text-4xl">
-				Diseñamos con intención, no solo con estética
+				Diseñamos con el corazón, construimos con precisión.
 			</h2>
 			<p class="mt-6 text-stone-600 leading-relaxed">
-				En Studio Interiores creemos que un buen diseño equilibra belleza y funcionalidad. Nuestro equipo
-				multidisciplinario trabaja de la mano contigo para entender cómo vives o cómo opera tu negocio,
-				y traducir eso en espacios que reflejan tu identidad.
+				En Sienna Home, somos especialistas en el diseño de interiores residenciales y la fabricación
+				de muebles integrados para departamentos. Como equipo, estamos comprometidos a cuidar cada
+				proyecto como si fuera nuestro, sabiendo que tu proyecto es un sueño y una inversión lograda
+				con mucho esfuerzo.
 			</p>
 			<p class="mt-4 text-stone-600 leading-relaxed">
-				Desde el primer boceto hasta la última pieza de mobiliario, cuidamos cada detalle para entregar
-				resultados que superan expectativas.
+				Apreciamos la estrecha conexión con nuestros clientes, lo que nos permite captar sus
+				visiones y deseos. Nuestro objetivo no es solo la estética, sino también la funcionalidad
+				de adaptarse a las necesidades de cada usuario.
 			</p>
-
-			<div class="mt-10 grid grid-cols-3 gap-6 border-t border-stone-200 pt-8">
-				{
-					stats.map((stat) => (
-						<div>
-							<p class="font-serif-display text-2xl font-semibold text-stone-900 sm:text-3xl">{stat.value}</p>
-							<p class="mt-1 text-xs text-stone-500 sm:text-sm">{stat.label}</p>
-						</div>
-					))
-				}
-			</div>
 		</div>
+	</div>
+
+	<div class="mt-16 grid grid-cols-2 gap-8 border-t border-stone-200 pt-10 lg:mt-20 lg:grid-cols-4 lg:gap-10">
+		{
+			pillars.map((pillar, i) => (
+				<div data-animate data-animate-delay={String(Math.min(i, 3))}>
+					<p class="font-serif-display text-3xl font-semibold text-stone-200 sm:text-4xl">{pillar.number}</p>
+					<h3 class="mt-2 font-serif-display text-lg font-semibold text-stone-900">{pillar.title}</h3>
+					<p class="mt-2 text-sm leading-relaxed text-stone-600">{pillar.description}</p>
+				</div>
+			))
+		}
 	</div>
 </section>

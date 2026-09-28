@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { categories } from '../../data/categories';
+
+export function getStaticPaths() {
+	return categories.map((category) => ({
+		params: { slug: category.slug },
+		props: { category },
+	}));
+}
+
+const { category } = Astro.props;
+---
+
+<Layout title={`${category.label} | Sienna Home & Design`} description={category.description}>
+	<Header />
+	<main class="pt-16 md:pt-20">
+		<section class="mx-auto max-w-5xl px-6 py-24 lg:px-8 lg:py-32">
+			<a
+				href="/#proyectos"
+				class="inline-flex items-center gap-2 text-sm font-medium text-stone-600 transition-colors hover:text-stone-900"
+			>
+				<span aria-hidden="true">←</span>
+				Volver a proyectos
+			</a>
+
+			<p class="mt-8 text-sm font-medium uppercase tracking-[0.3em] text-bronze-700">Proyectos</p>
+			<h1 class="mt-4 font-serif-display text-4xl font-semibold text-stone-900 sm:text-5xl">
+				{category.label}
+			</h1>
+			<p class="mt-6 max-w-2xl text-stone-600 leading-relaxed">{category.description}</p>
+
+			<div class="mt-12 aspect-16/10 w-full overflow-hidden rounded-2xl">
+				<img src={category.image} alt={category.label} class="h-full w-full object-cover" />
+			</div>
+
+			<div class="mt-14 text-center">
+				<a
+					href="/#contacto"
+					class="inline-flex items-center justify-center rounded-full bg-stone-900 px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-stone-700"
+				>
+					Cotiza un proyecto así
+				</a>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>

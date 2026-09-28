@@ -70,9 +70,9 @@ const socials = [
 
 			<a
 				href="#contacto"
-				class="inline-flex items-center rounded-full bg-stone-900 px-6 py-2.5 text-sm font-medium text-white hover:bg-amber-700 transition-colors"
+				class="inline-flex items-center rounded-full bg-stone-900 px-6 py-2.5 text-sm font-medium text-white hover:bg-stone-500 transition-colors"
 			>
-				Cotiza tu proyecto
+				Cotiza gratis
 			</a>
 		</div>
 
@@ -93,7 +93,7 @@ const socials = [
 	<nav id="mobile-menu" class="lg:hidden flex flex-col items-center gap-1 overflow-y-auto border-t border-stone-200/60 bg-white px-6 max-h-0 py-0 -translate-y-2 opacity-0 transition-all duration-700 ease-out">
 		{
 			links.map((link) => (
-				<a href={link.href} class="w-full py-3 text-center text-sm font-medium text-stone-600 border-b border-stone-200/60 last:border-0 transition-colors hover:text-amber-700">
+				<a href={link.href} class="w-full py-3 text-center text-sm font-medium text-stone-600 border-b border-stone-200/60 last:border-0 transition-colors hover:text-bronze-700">
 					{link.label}
 				</a>
 			))
@@ -117,8 +117,8 @@ const socials = [
 			}
 		</div>
 
-		<a href="#contacto" class="mt-4 inline-flex justify-center rounded-full bg-stone-900 px-6 py-2.5 text-sm font-medium text-white">
-			Cotiza tu proyecto
+		<a href="#contacto" class="mt-4 inline-flex justify-center rounded-full bg-stone-900 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-stone-500">
+			Cotiza gratis
 		</a>
 	</nav>
 </header>

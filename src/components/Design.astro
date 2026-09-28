@@ -1,0 +1,141 @@
+---
+const categories = [
+	{
+		label: 'Salas',
+		image: '/images/designs/salas.png',
+		description:
+			'Descubre el equilibrio perfecto entre estilo y confort en nuestras salas. Diseño contemporáneo, materiales de calidad y detalles que marcan la diferencia. Crea un espacio acogedor y sofisticado.',
+	},
+	{
+		label: 'Cocinas',
+		image: '/images/designs/cocinas.png',
+		description:
+			'Transforma tu hogar con nuestras cocinas innovadoras. Estilo moderno, funcionalidad excepcional y detalles de calidad. Crea momentos memorables en un espacio que combina diseño y practicidad.',
+	},
+	{
+		label: 'Comedores',
+		image: '/images/designs/comedores.png',
+		description:
+			'Renueva tus momentos en familia con nuestros comedores. Elegancia y funcionalidad se fusionan en cada diseño. Crea memorias inolvidables alrededor de un espacio bien pensado.',
+	},
+	{
+		label: 'Dormitorios',
+		image: '/images/designs/dormitorios.png',
+		description:
+			'Sumérgete en la comodidad y elegancia de nuestros dormitorios matrimoniales. Diseño sofisticado, calidad excepcional y detalles que crean un ambiente íntimo. Descubre el espacio perfecto para el descanso.',
+	},
+	{
+		label: 'Dormitorios infantiles',
+		image: '/images/designs/dormitorios-infantiles.png',
+		description:
+			'Crea un mundo mágico para tus pequeños con nuestros dormitorios infantiles. Diseños lúdicos, colores vibrantes y muebles funcionales que estimulan la creatividad. Transforma sus sueños en realidad.',
+	},
+	{
+		label: 'Baños',
+		image: '/images/designs/banos.png',
+		description:
+			'Transforma tu baño en un oasis de elegancia y confort. Nuestro diseño de baños combina funcionalidad con estilo, creando espacios que se adaptan a tu personalidad y necesidades.',
+	},
+	{
+		label: 'Estudios',
+		image: '/images/designs/estudios.png',
+		description:
+			'Crea un espacio inspirador para estudiar con nuestra zona de estudio. Diseño funcional, organización eficiente y estilo que potenciará tu concentración y productividad.',
+	},
+	{
+		label: 'Recibidores',
+		image: '/images/designs/recibidores.png',
+		description:
+			'Dale la bienvenida a tu hogar con estilo. Nuestro diseño de recibidores fusiona practicidad y estética para crear la primera impresión perfecta. Descubre cómo convertir tu entrada en un espacio acogedor y funcional.',
+	},
+	{
+		label: 'Lavanderías',
+		image: '/images/designs/lavanderias.png',
+		description:
+			'Nuestras lavanderías ofrecen eficiencia, funcionalidad y un toque contemporáneo para hacer de esta tarea diaria un placer. Modernizando y dando un toque contemporáneo.',
+	},
+];
+---
+
+<section id="diseno" class="py-24 lg:py-32">
+	<div class="mx-auto max-w-7xl px-6 lg:px-8">
+		<div data-animate class="mx-auto max-w-2xl text-center">
+			<p class="text-sm font-medium uppercase tracking-[0.3em] text-bronze-700">Diseño</p>
+			<h2 class="mt-4 font-serif-display text-3xl font-semibold text-stone-900 sm:text-4xl">
+				Inspiración para cada ambiente
+			</h2>
+			<p class="mt-4 text-stone-600">
+				Explora nuestras propuestas de diseño organizadas por tipo de espacio.
+			</p>
+		</div>
+	</div>
+
+	<div data-animate class="mt-16">
+		<div class="mx-auto max-w-7xl px-6 lg:px-8">
+			<div class="relative">
+				<div
+					id="design-track"
+					class="scrollbar-none flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4"
+				>
+					{
+						categories.map((category) => (
+							<div class="group relative aspect-4/5 w-64 shrink-0 snap-start overflow-hidden rounded-2xl sm:w-72">
+								<img
+									src={category.image}
+									alt={`Diseño de ${category.label.toLowerCase()}`}
+									loading="lazy"
+									class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+								/>
+								<div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/20 to-transparent opacity-80 transition-opacity group-hover:opacity-95" />
+								<div class="absolute inset-x-0 bottom-0 p-5">
+									<h3 class="font-serif-display text-lg font-semibold text-white">{category.label}</h3>
+									<p class="mt-2 line-clamp-6 text-xs leading-relaxed text-stone-200 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+										{category.description}
+									</p>
+								</div>
+							</div>
+						))
+					}
+				</div>
+
+				<button
+					id="design-prev"
+					type="button"
+					aria-label="Anterior"
+					class="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-stone-900 backdrop-blur transition-colors hover:bg-white"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+					</svg>
+				</button>
+				<button
+					id="design-next"
+					type="button"
+					aria-label="Siguiente"
+					class="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-stone-900 backdrop-blur transition-colors hover:bg-white"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+					</svg>
+				</button>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	const track = document.getElementById('design-track');
+	const prevButton = document.getElementById('design-prev');
+	const nextButton = document.getElementById('design-next');
+
+	const scrollByCard = (direction: number) => {
+		if (!track) return;
+		const card = track.querySelector<HTMLElement>(':scope > div');
+		const gap = 24;
+		const amount = (card?.offsetWidth ?? 280) + gap;
+		track.scrollBy({ left: amount * direction, behavior: 'smooth' });
+	};
+
+	prevButton?.addEventListener('click', () => scrollByCard(-1));
+	nextButton?.addEventListener('click', () => scrollByCard(1));
+</script>
